@@ -8,8 +8,10 @@
 
     <body>
         <h1>Heippa vaan!</h1>
-
-
-        <p><a href="/kategoriat">Kategoriat</a></p>
+        <ol>
+            <li th:each="kategoria: ${kategoriat}">
+                <span th:text="${kategoria.nimi}">kategorian nimi</span> <a th:href="${'/kategoriat/' + kategoria.id}">linkki</a>
+            </li>
+        </ol>
     </body>
 </html>

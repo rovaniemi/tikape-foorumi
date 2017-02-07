@@ -11,6 +11,7 @@ import java.util.List;
 
 public class KategoriaDao implements Dao<Kategoria, Integer>{
     private Database database;
+    
     public KategoriaDao(Database database) {
         this.database = database;
     }
@@ -48,6 +49,7 @@ public class KategoriaDao implements Dao<Kategoria, Integer>{
 
         ResultSet rs = stmt.executeQuery();
         List<Kategoria> kategoriat = new ArrayList<>();
+        
         while (rs.next()) {
             Integer id = rs.getInt("id");
             String nimi = rs.getString("nimi");
