@@ -1,17 +1,19 @@
 package tikape.runko.domain;
 
-public class Opiskelija {
+public class Kategoria {
 
     private Integer id;
     private String nimi;
+    private String kuvaus;
 
-    public Opiskelija(Integer id, String nimi) {
+    public Kategoria(Integer id, String nimi, String kuvaus) {
         this.id = id;
         this.nimi = nimi;
+        this.kuvaus = kuvaus;
     }
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {
@@ -19,11 +21,19 @@ public class Opiskelija {
     }
 
     public String getNimi() {
-        return nimi;
+        return this.nimi;
     }
 
     public void setNimi(String nimi) {
         this.nimi = nimi;
+    }
+
+    public String getKuvaus() {
+        return this.kuvaus;
+    }
+
+    public void setKuvaus(String kuvaus) {
+        this.kuvaus = kuvaus;
     }
 
 }

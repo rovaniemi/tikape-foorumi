@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tikape.runko.database;
+
+import tikape.runko.domain.Kategoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,20 +8,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import tikape.runko.domain.Opiskelija;
 
-public class OpiskelijaDao implements Dao<Opiskelija, Integer> {
-
+public class KategoriaDao implements Dao<Kategoria, Integer>{
     private Database database;
-
-    public OpiskelijaDao(Database database) {
+    public KategoriaDao(Database database) {
         this.database = database;
     }
 
     @Override
-    public Opiskelija findOne(Integer key) throws SQLException {
+    public Kategoria findOne(Integer key) throws SQLException {
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Opiskelija WHERE id = ?");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Kategoria WHERE id = ?");
         stmt.setObject(1, key);
 
         ResultSet rs = stmt.executeQuery();
@@ -35,36 +29,37 @@ public class OpiskelijaDao implements Dao<Opiskelija, Integer> {
 
         Integer id = rs.getInt("id");
         String nimi = rs.getString("nimi");
+        String kuvaus = rs.getString("kuvaus");
 
-        Opiskelija o = new Opiskelija(id, nimi);
+        Kategoria k = new Kategoria(id, nimi, kuvaus);
 
         rs.close();
         stmt.close();
         connection.close();
 
-        return o;
+        return k;
     }
 
     @Override
-    public List<Opiskelija> findAll() throws SQLException {
+    public List<Kategoria> findAll() throws SQLException {
 
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Opiskelija");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Kategoria");
 
         ResultSet rs = stmt.executeQuery();
-        List<Opiskelija> opiskelijat = new ArrayList<>();
+        List<Kategoria> kategoriat = new ArrayList<>();
         while (rs.next()) {
             Integer id = rs.getInt("id");
             String nimi = rs.getString("nimi");
-
-            opiskelijat.add(new Opiskelija(id, nimi));
+            String kuvaus = rs.getString("kuvaus");
+            kategoriat.add(new Kategoria(id, nimi, kuvaus));
         }
 
         rs.close();
         stmt.close();
         connection.close();
 
-        return opiskelijat;
+        return kategoriat;
     }
 
     @Override
@@ -73,3 +68,5 @@ public class OpiskelijaDao implements Dao<Opiskelija, Integer> {
     }
 
 }
+
+

@@ -7,9 +7,7 @@
     </head>
 
     <body>
-        <h1>Heippa vaan!</h1>
-
-
-        <p><a href="/kategoriat">Kategoriat</a></p>
+        <h1><span th:text="${kategoria.nimi}">Kategoria</span></h1>
+        <p>Kuvaus <span th:text="${kategoria.kuvaus}">Kuvaus</span></p>
     </body>
 </html>
