@@ -85,6 +85,7 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         rs.close();
         stmt.close();
         connection.close();
+        
         return keskustelut;
     }
 

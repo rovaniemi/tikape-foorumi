@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Otsikko</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
+        <h2 th:text="${keskustelu.otsikko}">otsikko</h2>
+        
+        <ol>
+            <li th:each="viesti: ${viestit}">
+                <span th:text="${viesti.viesti}">viestin teksti</span> 
+            </li>
+        </ol>
+    </body>
+</html>

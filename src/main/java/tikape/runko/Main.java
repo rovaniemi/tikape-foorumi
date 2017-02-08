@@ -9,7 +9,9 @@ import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import tikape.runko.database.Database;
 import tikape.runko.database.KategoriaDao;
 import tikape.runko.database.KeskusteluDao;
+import tikape.runko.database.ViestiDao;
 import tikape.runko.domain.Keskustelu;
+import tikape.runko.domain.Viesti;
 
 public class Main {
 
@@ -19,7 +21,7 @@ public class Main {
 
         KategoriaDao kategoriaDao = new KategoriaDao(database);
         KeskusteluDao keskusteluDao = new KeskusteluDao(database);
-//        ViestiDao viestiDao = new ViestiDao(database);
+        ViestiDao viestiDao = new ViestiDao(database);
 
         get("/", (req, res) -> {
             HashMap map = new HashMap<>();
@@ -40,7 +42,17 @@ public class Main {
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
         
-        
+        get("/:kategoriaId/:keskusteluId", (req, res) -> {
+            HashMap map = new HashMap<>();
+            List<Viesti> viestit = new ArrayList<>();
+            viestit = viestiDao.findAllByKeskustelu(Integer.parseInt(req.params("keskusteluId")));
+            
+            map.put("viestit", viestit);
+            map.put("keskustelu", keskusteluDao.findOne(Integer.parseInt(req.params("keskusteluId"))));
+            map.put("kategoria", kategoriaDao.findOne(Integer.parseInt(req.params("kategoriaId"))));
+            
+            return new ModelAndView(map, "viestit");
+        }, new ThymeleafTemplateEngine());
 
     }
 }
