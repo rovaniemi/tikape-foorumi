@@ -9,6 +9,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/* 
+Kategorioihin liittyvä hakemis- ja tallennustoiminnallisuus löytyy täältä. 
+Toteuttaa Dao-rajapinnan, eli löytyy metodit findOne, findAll ja delete.
+Tämä luokka siis hoitaa käytännössä Kategoria-tauluun liittyviä kyselyitä.
+Kyselyiden perusteella luodaan Kategoria-olioita, joita sitten palautetaan
+yksittäin tai listana takaisin metodin kutsujalle.
+*/
+
 public class KategoriaDao implements Dao<Kategoria, Integer>{
     private Database database;
     

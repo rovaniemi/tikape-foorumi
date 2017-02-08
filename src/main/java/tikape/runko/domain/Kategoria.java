@@ -1,7 +1,11 @@
 package tikape.runko.domain;
 
-public class Kategoria {
+/*
+Tämä on Kategoria-käsitteen olioversio. Ks. Viesti- ja Keskustelu-luokat. Toimii
+samalla tavalla. Materiaalissa luvussa 8.3 on hyödyllistä settiä.
+*/
 
+public class Kategoria {
     private Integer id;
     private String nimi;
     private String kuvaus;

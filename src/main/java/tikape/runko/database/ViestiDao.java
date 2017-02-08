@@ -6,11 +6,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import tikape.runko.domain.Keskustelu;
 import tikape.runko.domain.Viesti;
 
-public class ViestiDao implements Dao<Viesti, Integer> {
+/*
+Viesteihin liittyvä hakemis- ja tallennustoiminnallisuus löytyy täältä. 
+Toteuttaa Dao-rajapinnan, eli löytyy metodit findOne, findAll ja delete.
+Tämä luokka siis hoitaa käytännössä Viesti-tauluun liittyviä kyselyitä.
+Kyselyiden perusteella luodaan Viesti-olioita, joita sitten palautetaan
+yksittäin tai listana takaisin metodin kutsujalle.
+*/
 
+public class ViestiDao implements Dao<Viesti, Integer> {
     private Database database;
 
     public ViestiDao(Database database) {
@@ -66,7 +72,10 @@ public class ViestiDao implements Dao<Viesti, Integer> {
 
         return viestit;
     }
-
+    
+    //Tää on ite tehty uus metodi. Hakee Viesti taulusta ne viestit, joilla on 
+    //parametrina annettua key-muuttujaa vastaava arvo keskustelu-sarakkeessa.
+    //Elikkä siis hakee tietyn keskustelun viestit.
     public List<Viesti> findAllByKeskustelu(int key) throws SQLException {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Viesti WHERE Viesti.keskustelu = ?");

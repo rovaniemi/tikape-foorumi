@@ -4,10 +4,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Täällä luodaan yhteys meidän foorumin tietokantaan ja jos tietokantaa ei vielä 
+ole luotu, niin tämä koodi myös luo sen. 
+*/
+
 public class Database {
-
     private String databaseAddress;
-
+    
     public Database(String databaseAddress) throws ClassNotFoundException {
         this.databaseAddress = databaseAddress;
     }

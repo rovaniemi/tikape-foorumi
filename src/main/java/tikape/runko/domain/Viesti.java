@@ -1,7 +1,14 @@
 package tikape.runko.domain;
 
-public class Viesti {
+/*
+Tämä on meidän foorumiin liittyvän Viesti-käsitteen olio. Eli kun SQL-kyselyillä
+haetaan tietoa jostain tietystä viestistä, niin se voidaan tallentaa tän
+luokan mukaiseksi Viesti-olioksi. Eli esim. haetaan kyselyllä Viesti-taulun 
+rivi X, ja tallennetaan sen rivin id-sarakkeen arvo tän olion id:n arvoksi, 
+viesti-sarakkeen teksti tän olion viestimerkkijonon arvoksi jne. 
+*/
 
+public class Viesti {
     private Integer id;
     private String viesti;
     private String aika;
