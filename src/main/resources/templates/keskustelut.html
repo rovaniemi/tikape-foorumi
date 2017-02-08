@@ -7,12 +7,12 @@
     </head>
 
     <body>
-        <h1> Test </h1>
+        <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
+        <p><span th:text="${kategoria.kuvaus}">kategorian kuvaus</span></p>
         <ol>
             <li th:each="keskustelu: ${keskustelut}">
-                <span th:text="${keskustelu.otsikko}">otsikko</span> <a th:href="${'/keskustelu/' + keskustelu.id}">linkki</a>
+                <span th:text="${keskustelu.otsikko}">keskustelun otsikko</span> <a th:href="${'/' + keskustelu.kategoria + '/' + keskustelu.id}">linkki</a>
             </li>
         </ol>
-
     </body>
 </html>

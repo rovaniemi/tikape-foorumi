@@ -7,10 +7,10 @@
     </head>
 
     <body>
-        <h1>Heippa vaan!</h1>
+        <h1>Matikkafoorumi</h1>
         <ol>
             <li th:each="kategoria: ${kategoriat}">
-                <span th:text="${kategoria.nimi}">kategorian nimi</span> <a th:href="${'/kategoriat/' + kategoria.id}">linkki</a>
+                <span th:text="${kategoria.nimi}">kategorian nimi</span> <a th:href="${'/' + kategoria.id}">linkki</a>
             </li>
         </ol>
     </body>

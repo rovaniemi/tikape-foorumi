@@ -28,21 +28,19 @@ public class Main {
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
-        get("/kategoriat", (req, res) -> {
-            HashMap map = new HashMap<>();
 
-            return new ModelAndView(map, "kategoriat");
-        }, new ThymeleafTemplateEngine());
-
-        get("/kategoriat/:id", (req, res) -> {
+        get("/:id", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Keskustelu> keskustelut = new ArrayList<>();
             keskustelut = keskusteluDao.findAllByKategoria(Integer.parseInt(req.params("id")));
             
             map.put("keskustelut", keskustelut);
+            map.put("kategoria", kategoriaDao.findOne(Integer.parseInt(req.params("id"))));
             
-            return new ModelAndView(map, "kategoria");
+            return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
+        
+        
 
     }
 }
