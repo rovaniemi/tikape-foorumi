@@ -15,27 +15,14 @@ import tikape.runko.domain.Viesti;
 
 public class Main {
 
-    /*KÄYNNISTYS EKAA KERTAA: Kun ajat tän projektin ekaa kertaa, niin Database-
-    luokassa oleva koodi (database kansiossa) luo foorumi.db-nimisen tietokannan. 
-    Siellä on taulujen luonnin lisäksi valmiiksi lisätty alkudataa foorumille, eli 
-    muutamia aihealueita, aiheisiin liittyviä keskusteluja sekä keskusteluihin liittyviä 
-    viestejä. Noille taululle voi tosiaan tehdä ihan normisti SQL-kyselyitä 
-    sqliten kautta komentorivillä, ja kokeilla mitä eri kyselyt palauttaa.
-    MUUTEN: Tää Main-luokka luo databasen lisäksi noi daot, joihin on eriytetty
-    eri tauluihin liittyvät kyselyt. Niiden avulla sitten määritellään,
-    mitä eri sivuilla näkyy. Html-tiedostot löytyy src/main/resources/templates.
-     */
     public static void main(String[] args) throws Exception {
-        //yhdistäminen tietokantaan
         Database database = new Database("jdbc:sqlite:foorumi.db");
         database.init();
-
-        //eri kyselyjä käsittelevien osien luonti
+        
         KategoriaDao kategoriaDao = new KategoriaDao(database);
         KeskusteluDao keskusteluDao = new KeskusteluDao(database);
         ViestiDao viestiDao = new ViestiDao(database);
 
-        //täällä tehään niitä hakupyyntöjä eri osotteille
         get("/", (req, res) -> {
             HashMap map = new HashMap<>();
             map.put("nakyma", kategoriaDao.luoAlkunakyma());
@@ -67,12 +54,11 @@ public class Main {
         }, new ThymeleafTemplateEngine());
 
         post("/:kategoriaId/:keskusteluId", (req, res) -> {
-            String keskusteluId = req.params(":keskusteluId");
+            Integer keskusteluId = Integer.parseInt(req.params(":keskusteluId"));
             String teksti = req.queryParams("teksti");
-
-            System.out.println(keskusteluId + "   " + teksti);
-
-//            viestiDao.addViesti(teksti, keskusteluId);
+            
+            viestiDao.addViesti(teksti, keskusteluId);
+            
             res.redirect("redirect:home");
             return "";
         });

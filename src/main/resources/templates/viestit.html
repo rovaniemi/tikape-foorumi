@@ -16,12 +16,11 @@
             </li>
         </ol>
 
-        <form action="/:kategoriaId/:keskusteluId" method="POST">
+        <form method="POST" onsubmit="setTimeout(function () {window.location.reload(); },10)">
             <span>Viesti:</span>
             <input type="text" name="teksti"/>
             <input type="submit" value="Lisää viesti"/>
         </form>
-
 
     </body>
 </html>
