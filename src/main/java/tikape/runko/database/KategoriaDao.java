@@ -7,7 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import tikape.runko.domain.Alkunakyma;
+import tikape.runko.domain.Viesti;
 
 /* 
 Kategorioihin liittyvä hakemis- ja tallennustoiminnallisuus löytyy täältä. 
@@ -15,11 +19,11 @@ Toteuttaa Dao-rajapinnan, eli löytyy metodit findOne, findAll ja delete.
 Tämä luokka siis hoitaa käytännössä Kategoria-tauluun liittyviä kyselyitä.
 Kyselyiden perusteella luodaan Kategoria-olioita, joita sitten palautetaan
 yksittäin tai listana takaisin metodin kutsujalle.
-*/
+ */
+public class KategoriaDao implements Dao<Kategoria, Integer> {
 
-public class KategoriaDao implements Dao<Kategoria, Integer>{
     private Database database;
-    
+
     public KategoriaDao(Database database) {
         this.database = database;
     }
@@ -56,8 +60,9 @@ public class KategoriaDao implements Dao<Kategoria, Integer>{
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Kategoria");
 
         ResultSet rs = stmt.executeQuery();
+
         List<Kategoria> kategoriat = new ArrayList<>();
-        
+
         while (rs.next()) {
             Integer id = rs.getInt("id");
             String nimi = rs.getString("nimi");
@@ -77,6 +82,36 @@ public class KategoriaDao implements Dao<Kategoria, Integer>{
         // ei toteutettu
     }
 
+    public List<Alkunakyma> luoAlkunakyma() throws SQLException {
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, COUNT(Viesti.viesti) AS Viesteja_yhteensa, MAX(Viesti.aika) AS Viimeisin_viesti\n"
+                + "	FROM Kategoria, Viesti, Keskustelu\n"
+                + "	WHERE Keskustelu.id = Viesti.keskustelu \n"
+                + "AND Kategoria.id = Keskustelu.kategoria\n"
+                + "GROUP BY Kategoria.id");
+
+        ResultSet rs = stmt.executeQuery();
+
+        List<Alkunakyma> nakyma = new ArrayList<>();
+        
+
+        while (rs.next()) {
+            String kategoria = rs.getString("Kategoria");
+            String lukumaara = rs.getString("Viesteja_yhteensa");
+            String aika = rs.getString("Viimeisin_viesti");
+            String id = rs.getString("Id");
+
+            nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));
+
+            
+
+        }
+        
+        rs.close();
+            stmt.close();
+            connection.close();
+        return nakyma;
+
+    }
+
 }
-
-
