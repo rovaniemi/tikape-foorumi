@@ -71,6 +71,16 @@ public class Main {
             return "";
         });
 
+        post("/keskustelut/:id", (req, res) -> {
+            String kategoriaId = req.params(":id");
+            String teksti = req.queryParams("teksti");
+
+            System.out.println(kategoriaId + "   " + teksti);
+
+//            keskusteluDao.addKeskustelu(teksti, kategoriaId);
+            res.redirect("redirect:home");
+            return "";
+        });
 
     }
 

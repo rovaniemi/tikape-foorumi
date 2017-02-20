@@ -18,5 +18,12 @@
                 <span th:text="${keskustelu.otsikko}">keskustelun otsikko</span> <a th:href="${'/' + keskustelu.kategoria + '/' + keskustelu.id}">linkki</a>
             </li>
         </ol>
+
+        <form action="/keskustelut/:id" method="POST">
+            <span>Keskustelu:</span>
+            <input type="text" name="teksti"/>
+            <input type="submit" value="Lisää keskustelu"/>
+        </form>
+        
     </body>
 </html>
