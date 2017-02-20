@@ -100,6 +100,16 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         
         return keskustelut;
     }
+    
+    public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Keskustelu (otsikko, kategoria) VALUES ('teksti', kategoriaId)");
+        ResultSet rs = stmt.executeQuery();
+
+        rs.close();
+        stmt.close();
+        connection.close();
+    }
 
     @Override
     public void delete(Integer key) throws SQLException {

@@ -67,7 +67,6 @@ public class ViestiDao implements Dao<Viesti, Integer> {
         return viestit;
     }
 
-    
     public List<Viesti> findAllByKeskustelu(int key) throws SQLException {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Viesti WHERE Viesti.keskustelu = ?");

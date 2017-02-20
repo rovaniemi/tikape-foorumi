@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import spark.ModelAndView;
 import static spark.Spark.*;
+
+import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import tikape.runko.database.Database;
 import tikape.runko.database.KategoriaDao;
@@ -16,9 +18,10 @@ import tikape.runko.domain.Viesti;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        Spark.staticFileLocation("/public");
         Database database = new Database("jdbc:sqlite:foorumi.db");
         database.init();
-        
+
         KategoriaDao kategoriaDao = new KategoriaDao(database);
         KeskusteluDao keskusteluDao = new KeskusteluDao(database);
         ViestiDao viestiDao = new ViestiDao(database);
@@ -27,10 +30,11 @@ public class Main {
             HashMap map = new HashMap<>();
             map.put("nakyma", kategoriaDao.luoAlkunakyma());
 
+
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
-        get("/:id", (req, res) -> {
+        get("/keskustelut/:id", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Keskustelu> keskustelut = new ArrayList<>();
             keskustelut = keskusteluDao.findAllByKategoria(Integer.parseInt(req.params("id")));
@@ -59,6 +63,17 @@ public class Main {
             
             viestiDao.addViesti(teksti, keskusteluId);
             
+            res.redirect("redirect:home");
+            return "";
+        });
+
+        post("/keskustelut/:id", (req, res) -> {
+            String kategoriaId = req.params(":id");
+            String teksti = req.queryParams("teksti");
+
+            System.out.println(kategoriaId + "   " + teksti);
+
+//            keskusteluDao.addKeskustelu(teksti, kategoriaId);
             res.redirect("redirect:home");
             return "";
         });
