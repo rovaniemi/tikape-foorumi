@@ -1,29 +1,42 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <title>Otsikko</title>
-        <link rel="stylesheet" href="/theme.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <meta charset="utf-8" />
-    </head>
+<head>
+    <title>Matikkafoorumi</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/theme.css"/>
+    <link rel="stylesheet" href="/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap-theme.css"/>
+    <script src="/bootstrap.min.js"></script>
+</head>
 
     <body>
-        <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
-        <p><span th:text="${kategoria.kuvaus}">kategorian kuvaus</span></p>
-        <ol>
-            <li th:each="keskustelu: ${keskustelut}">
-                <span th:text="${keskustelu.otsikko}">keskustelun otsikko</span> <a th:href="${'/' + keskustelu.kategoria + '/' + keskustelu.id}">linkki</a>
-            </li>
-        </ol>
-
-        <form action="/keskustelut/:id" method="POST">
-            <span>Keskustelu:</span>
-            <input type="text" name="teksti"/>
-            <input type="submit" value="Lisää keskustelu"/>
+    <div class="container">
+        <div class="page-header page-heading">
+            <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
+        </div>
+        <div class="clearfix"></div>
+        <p class="lead" th:text="${kategoria.kuvaus}">kategorian kuvaus</p>
+        <table class="table forum table-striped">
+            <thead>
+            <tr>
+                <th><h4>Aihe</h4></th>
+                <th class="cell-stat text-center hidden-s hidden-m">Viestien määrä</th>
+                <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
+            </tr>
+            <tr th:each="keskustelu: ${keskustelut}">
+                <td><h4><a th:href="${'/kategoriat/' +  keskustelu.kategoria + '/' + keskustelu.id}" th:text="${keskustelu.otsikko}">otsikko</a></h4></td>
+                <td class="text-center hidden-s hidden-sm" >aika</td>
+                <td class="text-center hidden-s hidden-sm" >aika</td>
+            </tr>
+            </thead>
+        </table>
+        <form method="POST" onsubmit="setTimeout(function () {window.location.reload(); },10)">
+            <div class="form-group">
+                <textarea class="form-control" name="teksti" rows="3" placeholder="Lisää aihe"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Lisää aihe</button>
         </form>
-        
+    </div>
     </body>
 </html>

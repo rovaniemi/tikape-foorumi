@@ -94,8 +94,7 @@ public class ViestiDao implements Dao<Viesti, Integer> {
     public void addViesti(String teksti, Integer keskusteluId) throws SQLException {
         Connection connection = database.getConnection();
         
-        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Viesti (viesti, keskustelu) "
-                + "VALUES (?, ?)");
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Viesti (viesti, keskustelu) VALUES (?, ?)");
         stmt.setObject(1, teksti);
         stmt.setObject(2, keskusteluId);
         

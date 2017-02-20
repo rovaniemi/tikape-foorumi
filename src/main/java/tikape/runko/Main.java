@@ -45,7 +45,7 @@ public class Main {
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
 
-        get("/:kategoriaId/:keskusteluId", (req, res) -> {
+        get("kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Viesti> viestit = new ArrayList<>();
             viestit = viestiDao.findAllByKeskustelu(Integer.parseInt(req.params("keskusteluId")));
@@ -57,10 +57,10 @@ public class Main {
             return new ModelAndView(map, "viestit");
         }, new ThymeleafTemplateEngine());
 
-        post("/:kategoriaId/:keskusteluId", (req, res) -> {
+        post("/kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
             Integer keskusteluId = Integer.parseInt(req.params(":keskusteluId"));
             String teksti = req.queryParams("teksti");
-            
+            System.out.println("asdf");
             viestiDao.addViesti(teksti, keskusteluId);
             
             res.redirect("redirect:home");
@@ -68,12 +68,9 @@ public class Main {
         });
 
         post("/keskustelut/:id", (req, res) -> {
-            String kategoriaId = req.params(":id");
+            Integer kategoriaId = Integer.parseInt(req.params(":id"));
             String teksti = req.queryParams("teksti");
-
-            System.out.println(kategoriaId + "   " + teksti);
-
-//            keskusteluDao.addKeskustelu(teksti, kategoriaId);
+            keskusteluDao.addKeskustelu(teksti, kategoriaId);
             res.redirect("redirect:home");
             return "";
         });

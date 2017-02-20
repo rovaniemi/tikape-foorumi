@@ -6,20 +6,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 import tikape.runko.domain.Alkunakyma;
 import tikape.runko.domain.Viesti;
 
-/* 
-Kategorioihin liittyvä hakemis- ja tallennustoiminnallisuus löytyy täältä. 
-Toteuttaa Dao-rajapinnan, eli löytyy metodit findOne, findAll ja delete.
-Tämä luokka siis hoitaa käytännössä Kategoria-tauluun liittyviä kyselyitä.
-Kyselyiden perusteella luodaan Kategoria-olioita, joita sitten palautetaan
-yksittäin tai listana takaisin metodin kutsujalle.
- */
 public class KategoriaDao implements Dao<Kategoria, Integer> {
 
     private Database database;
@@ -99,6 +93,23 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
             String kategoria = rs.getString("Kategoria");
             String lukumaara = rs.getString("Viesteja_yhteensa");
             String aika = rs.getString("Viimeisin_viesti");
+            DateFormat readFormat = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss");
+            DateFormat writeFormat = new SimpleDateFormat( "dd.MM HH:mm");
+            Date date = null;
+            try {
+                date = readFormat.parse( aika );
+            } catch ( ParseException e ) {
+                e.printStackTrace();
+            }
+
+            String formattedDate = "";
+            if( date != null ) {
+                formattedDate = writeFormat.format( date );
+            }
+
+            aika = formattedDate;
+            System.out.println(aika);
+
             String id = rs.getString("Id");
 
             nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));

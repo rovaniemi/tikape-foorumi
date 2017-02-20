@@ -2,33 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <title>Otsikko</title>
+        <title>Matikkafoorumi</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/theme.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/bootstrap.css"/>
+        <link rel="stylesheet" href="/bootstrap-theme.css"/>
+        <script src="/bootstrap.min.js"></script>
     </head>
 
     <body>
-        <h1>Matikkafoorumi</h1>
-      
-        
+    <div class="container">
+        <div class="page-header page-heading">
 
-        <table>
+        <h1>Matikkafoorumi</h1>
+        </div>
+        <div class="clearfix"></div>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie, urna vitae ornare eleifend, tellus sapien rutrum purus, nec consectetur sem diam a nibh. Fusce quis ullamcorper ligula. Integer ultrices sapien eu massa mattis, vulputate efficitur elit tincidunt.</p>
+        <table class="table forum table-striped">
+            <thead>
             <tr>
-                <th>KATEGORIA</th>
-                <th>VIESTIEN MÄÄRÄ</th>
-                <th>VIIMEISIN VIESTI</th>
-                
+                <th>
+                    <h4>Kategoria</h4>
+                </th>
+                <th class="cell-stat text-center hidden-s hidden-m">Viestien määrä</th>
+                <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
             </tr>
-            <tr th:each="nakyma : ${nakyma}"> 
-                <td th:text="${nakyma.kategoriaNimi}">nimi</td> 
-                <td th:text="${nakyma.lukumaara}">aika</td>
-                <td th:text="${nakyma.aika}">lukumaara</td>
-                <td><a th:href="keskustelut + '/' + ${nakyma.kategoriaId}">linkki</a></td>
+            <tr th:each="nakyma : ${nakyma}">
+                <td><h4><a th:href="keskustelut + '/' + ${nakyma.kategoriaId}" th:text="${nakyma.kategoriaNimi}">nimi</a><br/><small>Some description</small></h4></td>
+                <td class="text-center hidden-s hidden-sm" th:text="${nakyma.lukumaara}">lukumaara</td>
+                <td class="text-center hidden-s hidden-sm" th:text="${nakyma.aika}">aika</td>
             </tr>
-            
+            </thead>
         </table>
+    </div>
     </body>
 </html>

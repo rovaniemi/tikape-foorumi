@@ -103,10 +103,12 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
     
     public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Keskustelu (otsikko, kategoria) VALUES ('teksti', kategoriaId)");
-        ResultSet rs = stmt.executeQuery();
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Keskustelu (otsikko, kategoria) VALUES (?, ?)");
+        stmt.setObject(1, teksti);
+        stmt.setObject(2, kategoriaId);
+        stmt.execute();
 
-        rs.close();
+        stmt.close();
         stmt.close();
         connection.close();
     }
