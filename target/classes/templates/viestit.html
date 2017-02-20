@@ -9,11 +9,19 @@
     <body>
         <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
         <h2 th:text="${keskustelu.otsikko}">otsikko</h2>
-        
+
         <ol>
             <li th:each="viesti: ${viestit}">
                 <span th:text="${viesti.viesti}">viestin teksti</span> 
             </li>
         </ol>
+
+        <form action="/:kategoriaId/:keskusteluId" method="POST">
+            <span>Viesti:</span>
+            <input type="text" name="teksti"/>
+            <input type="submit" value="Lisää viesti"/>
+        </form>
+
+
     </body>
 </html>

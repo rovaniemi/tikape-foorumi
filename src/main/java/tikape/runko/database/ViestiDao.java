@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import tikape.runko.domain.Keskustelu;
 import tikape.runko.domain.Viesti;
 
 /*
@@ -14,9 +15,9 @@ Toteuttaa Dao-rajapinnan, eli löytyy metodit findOne, findAll ja delete.
 Tämä luokka siis hoitaa käytännössä Viesti-tauluun liittyviä kyselyitä.
 Kyselyiden perusteella luodaan Viesti-olioita, joita sitten palautetaan
 yksittäin tai listana takaisin metodin kutsujalle.
-*/
-
+ */
 public class ViestiDao implements Dao<Viesti, Integer> {
+
     private Database database;
 
     public ViestiDao(Database database) {
@@ -72,7 +73,7 @@ public class ViestiDao implements Dao<Viesti, Integer> {
 
         return viestit;
     }
-    
+
     //Tää on ite tehty uus metodi. Hakee Viesti taulusta ne viestit, joilla on 
     //parametrina annettua key-muuttujaa vastaava arvo keskustelu-sarakkeessa.
     //Elikkä siis hakee tietyn keskustelun viestit.
@@ -98,6 +99,19 @@ public class ViestiDao implements Dao<Viesti, Integer> {
         connection.close();
 
         return viestit;
+    }
+
+    public void addViesti(String teksti, Integer keskusteluId) throws SQLException {
+        System.out.println("sdoadoakdoskd");
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Viesti (viesti, keskustelu) VALUES ('teksti', keskusteluId)");
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaa");
+        ResultSet rs = stmt.executeQuery();
+        System.out.println("beeeeeeeeeeeeeeeeee");
+
+        rs.close();
+        stmt.close();
+        connection.close();
     }
 
     @Override
