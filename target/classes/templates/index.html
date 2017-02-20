@@ -8,10 +8,23 @@
 
     <body>
         <h1>Matikkafoorumi</h1>
-        <ol>
-            <li th:each="kategoria: ${kategoriat}">
-                <span th:text="${kategoria.nimi}">kategorian nimi</span> <a th:href="${'/' + kategoria.id}">linkki</a>
-            </li>
-        </ol>
+      
+        
+
+        <table>
+            <tr>
+                <th>KATEGORIA</th>
+                <th>VIESTIEN MÄÄRÄ</th>
+                <th>VIIMEISIN VIESTI</th>
+                
+            </tr>
+            <tr th:each="nakyma : ${nakyma}"> 
+                <td th:text="${nakyma.kategoriaNimi}">nimi</td> 
+                <td th:text="${nakyma.lukumaara}">aika</td>
+                <td th:text="${nakyma.aika}">lukumaara</td>
+                <td><a th:href="${nakyma.kategoriaId}">></a></td>
+            </tr>
+            
+        </table>
     </body>
 </html>

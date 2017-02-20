@@ -38,7 +38,7 @@ public class Main {
         //täällä tehään niitä hakupyyntöjä eri osotteille
         get("/", (req, res) -> {
             HashMap map = new HashMap<>();
-            map.put("kategoriat", kategoriaDao.findAll());
+            map.put("nakyma", kategoriaDao.luoAlkunakyma());
 
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
@@ -69,15 +69,14 @@ public class Main {
         post("/:kategoriaId/:keskusteluId", (req, res) -> {
             String keskusteluId = req.params(":keskusteluId");
             String teksti = req.queryParams("teksti");
-            
+
             System.out.println(keskusteluId + "   " + teksti);
-            
+
 //            viestiDao.addViesti(teksti, keskusteluId);
-            
-            
             res.redirect("redirect:home");
             return "";
         });
 
     }
+
 }
