@@ -41,6 +41,7 @@ public class Main {
             HashMap map = new HashMap<>();
             map.put("kategoriat", kategoriaDao.findAll());
 
+
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
