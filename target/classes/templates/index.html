@@ -4,6 +4,7 @@
     <head>
         <title>Otsikko</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="/theme.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -25,7 +26,7 @@
                 <td th:text="${nakyma.kategoriaNimi}">nimi</td> 
                 <td th:text="${nakyma.lukumaara}">aika</td>
                 <td th:text="${nakyma.aika}">lukumaara</td>
-                <td><a th:href="${nakyma.kategoriaId}">></a></td>
+                <td><a th:href="keskustelut + '/' + ${nakyma.kategoriaId}">linkki</a></td>
             </tr>
             
         </table>

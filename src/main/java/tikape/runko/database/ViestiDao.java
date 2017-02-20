@@ -73,18 +73,18 @@ public class ViestiDao implements Dao<Viesti, Integer> {
 
         return viestit;
     }
-<<<<<<< HEAD
+
     
     /*Tää on ite tehty uus metodi. Hakee Viesti taulusta ne viestit, joilla on
     parametrina annettua key-muuttujaa vastaava arvo keskustelu-sarakkeessa.
     Elikkä siis hakee tietyn keskustelun viestit.*/
 
-=======
+
 
     //Tää on ite tehty uus metodi. Hakee Viesti taulusta ne viestit, joilla on 
     //parametrina annettua key-muuttujaa vastaava arvo keskustelu-sarakkeessa.
     //Elikkä siis hakee tietyn keskustelun viestit.
->>>>>>> c87726e412a68f842280a816cbb018168e3a1eaf
+
     public List<Viesti> findAllByKeskustelu(int key) throws SQLException {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Viesti WHERE Viesti.keskustelu = ?");

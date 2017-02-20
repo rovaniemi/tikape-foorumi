@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import spark.ModelAndView;
 import static spark.Spark.*;
+
+import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import tikape.runko.database.Database;
 import tikape.runko.database.KategoriaDao;
@@ -15,20 +17,11 @@ import tikape.runko.domain.Viesti;
 
 public class Main {
 
-    /*KÄYNNISTYS EKAA KERTAA: Kun ajat tän projektin ekaa kertaa, niin Database-
-    luokassa oleva koodi (database kansiossa) luo foorumi.db-nimisen tietokannan. 
-    Siellä on taulujen luonnin lisäksi valmiiksi lisätty alkudataa foorumille, eli 
-    muutamia aihealueita, aiheisiin liittyviä keskusteluja sekä keskusteluihin liittyviä 
-    viestejä. Noille taululle voi tosiaan tehdä ihan normisti SQL-kyselyitä 
-    sqliten kautta komentorivillä, ja kokeilla mitä eri kyselyt palauttaa.
-    MUUTEN: Tää Main-luokka luo databasen lisäksi noi daot, joihin on eriytetty
-    eri tauluihin liittyvät kyselyt. Niiden avulla sitten määritellään,
-    mitä eri sivuilla näkyy. Html-tiedostot löytyy src/main/resources/templates.
-     */
     public static void main(String[] args) throws Exception {
-        //yhdistäminen tietokantaan
+        Spark.staticFileLocation("/public");
         Database database = new Database("jdbc:sqlite:foorumi.db");
         database.init();
+
 
         //eri kyselyjä käsittelevien osien luonti
         KategoriaDao kategoriaDao = new KategoriaDao(database);
@@ -44,7 +37,7 @@ public class Main {
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
-        get("/:id", (req, res) -> {
+        get("/keskustelut/:id", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Keskustelu> keskustelut = new ArrayList<>();
             keskustelut = keskusteluDao.findAllByKategoria(Integer.parseInt(req.params("id")));
@@ -77,6 +70,7 @@ public class Main {
             res.redirect("redirect:home");
             return "";
         });
+
 
     }
 
