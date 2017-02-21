@@ -60,8 +60,8 @@ public class Main {
         post("/kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
             Integer keskusteluId = Integer.parseInt(req.params(":keskusteluId"));
             String teksti = req.queryParams("teksti");
-            System.out.println("asdf");
-            viestiDao.addViesti(teksti, keskusteluId);
+            String lahettaja = req.queryParams("lahettaja");
+            viestiDao.addViesti(teksti + " t. " + lahettaja, keskusteluId);
             
             res.redirect("redirect:home");
             return "";
@@ -69,8 +69,12 @@ public class Main {
 
         post("/keskustelut/:id", (req, res) -> {
             Integer kategoriaId = Integer.parseInt(req.params(":id"));
-            String teksti = req.queryParams("teksti");
-            keskusteluDao.addKeskustelu(teksti, kategoriaId);
+            String otsikko = req.queryParams("otsikko");
+            String viesti = req.queryParams("viesti");
+            String lahettaja = req.queryParams("lahettaja");
+            keskusteluDao.addKeskustelu(otsikko, kategoriaId);
+            viestiDao.addViesti(viesti + " t. " + lahettaja, keskusteluDao.palautaViimeisin());
+            
             res.redirect("redirect:home");
             return "";
         });

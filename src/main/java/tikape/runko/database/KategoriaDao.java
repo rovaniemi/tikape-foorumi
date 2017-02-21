@@ -108,13 +108,10 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
             }
 
             aika = formattedDate;
-            System.out.println(aika);
 
             String id = rs.getString("Id");
 
-            nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));
-
-            
+            nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));       
 
         }
         
