@@ -89,23 +89,6 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         return keskustelut;
     }
 
-    public int findIdByName(String nimi) throws SQLException{
-        Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT id FROM Kategoria WHERE nimi = ?");
-        stmt.setObject(1,nimi);
-
-        ResultSet rs = stmt.executeQuery();
-        List<Integer> kokonaisluku = new ArrayList<>();
-        while (rs.next()){
-            Integer id = rs.getInt("id");
-            kokonaisluku.add(id);
-        }
-        rs.close();
-        stmt.close();
-        connection.close();
-        return kokonaisluku.get(0);
-    }
-
     public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO Keskustelu (otsikko, kategoria) VALUES (?, ?)");

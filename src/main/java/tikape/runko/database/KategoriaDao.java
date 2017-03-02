@@ -71,6 +71,23 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
         return kategoriat;
     }
 
+    public int findIdByName(String nimi) throws SQLException {
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT id FROM Kategoria WHERE nimi = ?");
+        stmt.setObject(1, nimi);
+
+        ResultSet rs = stmt.executeQuery();
+        List<Integer> kokonaisluku = new ArrayList<>();
+        while (rs.next()) {
+            Integer id = rs.getInt("id");
+            kokonaisluku.add(id);
+        }
+        rs.close();
+        stmt.close();
+        connection.close();
+        return kokonaisluku.get(0);
+    }
+
     @Override
     public void delete(Integer key) throws SQLException {
         // ei toteutettu
@@ -78,7 +95,7 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
 
     public List<Alkunakyma> luoAlkunakyma() throws SQLException {
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, COUNT(Viesti.viesti) AS Viesteja_yhteensa, MAX(Viesti.aika) AS Viimeisin_viesti\n"
+        PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, Kategoria.kuvaus AS Kuvaus, COUNT(Viesti.viesti) AS Viesteja_yhteensa, MAX(Viesti.aika) AS Viimeisin_viesti\n"
                 + "	FROM Kategoria, Viesti, Keskustelu\n"
                 + "	WHERE Keskustelu.id = Viesti.keskustelu \n"
                 + "AND Kategoria.id = Keskustelu.kategoria\n"
@@ -87,35 +104,35 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
         ResultSet rs = stmt.executeQuery();
 
         List<Alkunakyma> nakyma = new ArrayList<>();
-        
 
         while (rs.next()) {
             String kategoria = rs.getString("Kategoria");
             String lukumaara = rs.getString("Viesteja_yhteensa");
             String aika = rs.getString("Viimeisin_viesti");
-            DateFormat readFormat = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss");
-            DateFormat writeFormat = new SimpleDateFormat( "HH:mm dd.MM");
+            String kuvaus = rs.getString("Kuvaus");
+            DateFormat readFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM");
             Date date = null;
             try {
-                date = readFormat.parse( aika );
-            } catch ( ParseException e ) {
+                date = readFormat.parse(aika);
+            } catch (ParseException e) {
                 e.printStackTrace();
             }
             String formattedDate = "";
-            if( date != null ) {
-                formattedDate = writeFormat.format( date );
+            if (date != null) {
+                formattedDate = writeFormat.format(date);
             }
             aika = formattedDate;
 
             String id = rs.getString("Id");
 
-            nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));       
+            nakyma.add(new Alkunakyma(kategoria, lukumaara, aika, id, kuvaus));
 
         }
-        
+
         rs.close();
-            stmt.close();
-            connection.close();
+        stmt.close();
+        connection.close();
         return nakyma;
 
     }

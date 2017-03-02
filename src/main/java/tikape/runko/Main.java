@@ -34,11 +34,10 @@ public class Main {
 
         get("/kategoria/:name", (req, res) -> {
             HashMap map = new HashMap<>();
-            List<Keskustelu> keskustelut = new ArrayList<>();
-            int keskusteluId = keskusteluDao.findIdByName(req.params("name"));
-            keskustelut = keskusteluDao.findAllByKategoria(keskusteluId);
+            int kategoriaId = kategoriaDao.findIdByName(req.params("name"));
+            List<Keskustelu> keskustelut = keskusteluDao.findAllByKategoria(kategoriaId);
             map.put("keskustelut", keskustelut);
-            map.put("kategoria", kategoriaDao.findOne(keskusteluId));
+            map.put("kategoria", kategoriaDao.findOne(kategoriaId));
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
 
@@ -49,7 +48,7 @@ public class Main {
             List<Viesti> kymmenenViestia = kymmenenViestia(kaikkiViestit,koko[1]);
             map.put("viestit", kymmenenViestia);
             map.put("keskustelu", keskusteluDao.findOne(Integer.parseInt(koko[0])));
-            int kategoriaId = keskusteluDao.findIdByName(req.params("kategoriaNimi"));
+            int kategoriaId = kategoriaDao.findIdByName(req.params("kategoriaNimi"));
             map.put("kategoria", kategoriaDao.findOne(kategoriaId));
             map.put("maara", viestienMaara(kaikkiViestit,Integer.parseInt(koko[1])));
             return new ModelAndView(map, "viestit");
@@ -67,7 +66,7 @@ public class Main {
 
         post("/kategoria/:name", (req, res) -> {
 
-            Integer kategoriaId = keskusteluDao.findIdByName(req.params("name"));
+            Integer kategoriaId = kategoriaDao.findIdByName(req.params("name"));
             System.out.println(kategoriaId);
             String otsikko = req.queryParams("otsikko");
             String viesti = req.queryParams("viesti");
@@ -95,7 +94,7 @@ public class Main {
     }
 
     public static List<Maara> viestienMaara(List<Viesti> kaikkiviestit, int tamanhetkinen){
-        List<Maara> lista = new ArrayList<Maara>();
+        List<Maara> lista = new ArrayList<>();
         for (int i = 0; i < kaikkiviestit.size(); i = i + 10) {
             if((i/10 + 1) == tamanhetkinen){
                 lista.add(new Maara(i/10 + 1,true));

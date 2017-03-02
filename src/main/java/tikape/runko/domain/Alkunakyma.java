@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tikape.runko.domain;
 
-/**
- *
- * @author topi
- */
 public class Alkunakyma {
+
     private String kategoriaNimi;
     private String lukumaara;
     private String aika;
     private String kategoriaId;
-    
+    private String kategoriaKuvaus;
 
-    public Alkunakyma(String kategoria, String lukumaara, String aika, String kategoriaId) {
+    public Alkunakyma(String kategoria, String lukumaara, String aika, String kategoriaId, String kategoriaKuvaus) {
         this.kategoriaNimi = kategoria;
         this.lukumaara = lukumaara;
         this.aika = aika;
         this.kategoriaId = kategoriaId;
+        this.kategoriaKuvaus = kategoriaKuvaus;
     }
 
     public String getAika() {
@@ -50,5 +43,13 @@ public class Alkunakyma {
     public void setLukumaara(String lukumaara) {
         this.lukumaara = lukumaara;
     }
-        
+
+    public String getKategoriaKuvaus() {
+        return kategoriaKuvaus;
+    }
+
+    public void setKategoriaKuvaus(String kategoriaKuvaus) {
+        this.kategoriaKuvaus = kategoriaKuvaus;
+    }
+
 }
