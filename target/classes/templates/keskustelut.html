@@ -15,7 +15,7 @@
             <div class="page-header page-heading">
                 <ol class="breadcrumb pull-right where-am-i">
                     <li><a href="/">Etusivu</a></li>
-                    <li class="active">Kategoria</li>
+                    <li class="active" th:text="${kategoria.nimi}"></li>
                 </ol>
                 <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
             </div>

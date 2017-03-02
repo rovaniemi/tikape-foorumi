@@ -12,12 +12,16 @@
 
     <body>
         <div class="container">
+            <div class="page-header page-heading">
             <ol class="breadcrumb pull-right where-am-i">
                 <li><a href="/">Etusivu</a></li>
-                <li><a href="/">Kategoria</a></li>
+                <li><a th:href="${'/kategoria/' + kategoria.nimi}" th:text="${kategoria.nimi}"></a></li>
                 <li class="active">Keskustelu</li>
+
             </ol>
-            <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
+                <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
+            </div>
+
             <h4 th:text="${keskustelu.otsikko}">otsikko</h4>
             <ul class="timeline">
                 <li th:each="viesti,iterStat : ${viestit}" th:class="${iterStat.odd}? 'timeline-inverted' ">
