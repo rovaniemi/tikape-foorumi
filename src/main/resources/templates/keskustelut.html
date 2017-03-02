@@ -29,7 +29,7 @@
                         <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
                     </tr>
                     <tr th:each="keskustelu: ${keskustelut}">
-                        <td><h4><a th:href="${'/kategoria/' +  kategoria.nimi + '/' + keskustelu.id}" th:text="${keskustelu.otsikko}">otsikko</a></h4></td>
+                        <td><h4><a th:href="${'/kategoria/' +  kategoria.nimi + '/' + keskustelu.id + '-' + 1}" th:text="${keskustelu.otsikko}">otsikko</a></h4></td>
                         <td class="text-center hidden-s hidden-sm" >aika</td>
                         <td class="text-center hidden-s hidden-sm" >aika</td>
                     </tr>

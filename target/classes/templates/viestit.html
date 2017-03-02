@@ -17,7 +17,6 @@
                 <li><a href="/">Etusivu</a></li>
                 <li><a th:href="${'/kategoria/' + kategoria.nimi}" th:text="${kategoria.nimi}"></a></li>
                 <li class="active">Keskustelu</li>
-
             </ol>
                 <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
             </div>
@@ -33,6 +32,14 @@
                     </div>
                 </li>
             </ul>
+
+            <ol class="breadcrumb pull-left where-am-i">
+                <li th:each="maara: ${maara}" >
+                    <a th:if="${maara.getOnkoSivu()} == false" th:href="${'/kategoria/' + kategoria.nimi + '/' + keskustelu.id + '-' + maara.id}" th:text="${maara.id}"></a>
+                    <a th:if="${maara.getOnkoSivu()} == true" th:text="${maara.id}" style="color:#808080; text-decoration: none;" ></a>
+                </li>
+            </ol>
+
             <form method="POST" onsubmit="setTimeout(function () {
                         window.location.reload();
                     }, 10)">
