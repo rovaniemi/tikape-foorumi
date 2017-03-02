@@ -50,7 +50,5 @@ public class Alkunakyma {
     public void setLukumaara(String lukumaara) {
         this.lukumaara = lukumaara;
     }
-    
-    
-    
+        
 }
