@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import spark.ModelAndView;
 import static spark.Spark.*;
-
 import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import tikape.runko.database.Database;
@@ -34,25 +33,30 @@ public class Main {
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
-        get("/keskustelut/:id", (req, res) -> {
+
+        get("/kategoria/:name", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Keskustelu> keskustelut = new ArrayList<>();
-            keskustelut = keskusteluDao.findAllByKategoria(Integer.parseInt(req.params("id")));
+            int keskusteluId = keskusteluDao.findIdByName(req.params("name"));
+            keskustelut = keskusteluDao.findAllByKategoria(keskusteluId);
 
             map.put("keskustelut", keskustelut);
-            map.put("kategoria", kategoriaDao.findOne(Integer.parseInt(req.params("id"))));
+            map.put("kategoria", kategoriaDao.findOne(keskusteluId));
 
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
 
-        get("kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
+
+
+        get("kategoria/:kategoriaNimi/:keskusteluId", (req, res) -> {
             HashMap map = new HashMap<>();
             List<Viesti> viestit = new ArrayList<>();
             viestit = viestiDao.findAllByKeskustelu(Integer.parseInt(req.params("keskusteluId")));
 
             map.put("viestit", viestit);
             map.put("keskustelu", keskusteluDao.findOne(Integer.parseInt(req.params("keskusteluId"))));
-            map.put("kategoria", kategoriaDao.findOne(Integer.parseInt(req.params("kategoriaId"))));
+            int kategoriaId = keskusteluDao.findIdByName(req.params("kategoriaNimi"));
+            map.put("kategoria", kategoriaDao.findOne(kategoriaId));
 
             return new ModelAndView(map, "viestit");
         }, new ThymeleafTemplateEngine());
@@ -60,7 +64,7 @@ public class Main {
         post("/kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
             Integer keskusteluId = Integer.parseInt(req.params(":keskusteluId"));
             String teksti = req.queryParams("teksti");
-            System.out.println("asdf");
+            System.out.println(req.raw());
             viestiDao.addViesti(teksti, keskusteluId);
             
             res.redirect("redirect:home");

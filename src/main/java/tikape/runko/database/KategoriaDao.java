@@ -94,28 +94,21 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
             String lukumaara = rs.getString("Viesteja_yhteensa");
             String aika = rs.getString("Viimeisin_viesti");
             DateFormat readFormat = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss");
-            DateFormat writeFormat = new SimpleDateFormat( "dd.MM HH:mm");
+            DateFormat writeFormat = new SimpleDateFormat( "HH:mm dd.MM");
             Date date = null;
             try {
                 date = readFormat.parse( aika );
             } catch ( ParseException e ) {
                 e.printStackTrace();
             }
-
             String formattedDate = "";
             if( date != null ) {
                 formattedDate = writeFormat.format( date );
             }
-
             aika = formattedDate;
             System.out.println(aika);
-
             String id = rs.getString("Id");
-
             nakyma.add(new Alkunakyma(kategoria,lukumaara,aika, id));
-
-            
-
         }
         
         rs.close();

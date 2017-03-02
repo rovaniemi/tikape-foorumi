@@ -73,12 +73,7 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         return keskustelut;
     }
 
-    //Tää on ite tehty uus metodi. Hakee Keskustelu-taulusta ne viestit, joilla on 
-    //parametrina annettua key-muuttujaa vastaava arvo kategoria-sarakkeessa.
-    //Elikkä siis hakee tiettyyn kategoriaan liittyvät keskustelut, ja palauttaa
-    //ne listana.
     public List<Keskustelu> findAllByKategoria(int key) throws SQLException {
-
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Keskustelu WHERE Keskustelu.kategoria = ?");
         stmt.setObject(1, key);
@@ -100,6 +95,23 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         
         return keskustelut;
     }
+
+    public int findIdByName(String nimi) throws SQLException{
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT id FROM Kategoria WHERE nimi = ?");
+        stmt.setObject(1,nimi);
+
+        ResultSet rs = stmt.executeQuery();
+        List<Integer> kokonaisluku = new ArrayList<>();
+        while (rs.next()){
+            Integer id = rs.getInt("id");
+            kokonaisluku.add(id);
+        }
+        rs.close();
+        stmt.close();
+        connection.close();
+        return kokonaisluku.get(0);
+    }
     
     public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
         Connection connection = database.getConnection();
@@ -107,15 +119,12 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         stmt.setObject(1, teksti);
         stmt.setObject(2, kategoriaId);
         stmt.execute();
-
-        stmt.close();
         stmt.close();
         connection.close();
     }
 
     @Override
     public void delete(Integer key) throws SQLException {
-        // ei toteutettu
-    }
 
+    }
 }
