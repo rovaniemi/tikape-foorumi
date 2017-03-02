@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        
     <div class="container">
          <div class="page-header page-heading">
          <ol class="breadcrumb pull-right where-am-i">
@@ -19,8 +20,34 @@
          </ol>
 
         <h1>Matikkafoorumi</h1>
+
+        <div class="container">
+            <div class="page-header page-heading">
+                <ol class="breadcrumb pull-right where-am-i">
+                    <li class="active">Etusivu</li>
+                </ol>
+                <h1>Matikkafoorumi</h1>
+            </div>
+            <div class="clearfix"></div>
+            <p class="lead">Tervetuloa Matikkafoorumille! Täällä voit keskustella eri matematiikan osa-alueista, kysyä apua tehtäviin tai muuten vain jutella matematiikasta kiinnostuneiden kanssa. Foorumille kirjoittaminen ei vaadi kirjautumista. </p>
+            <table class="table forum table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <h4>Kategoria</h4>
+                        </th>
+                        <th class="cell-stat text-center hidden-s hidden-m">Viestien määrä</th>
+                        <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
+                    </tr>
+                    <tr th:each="nakyma : ${nakyma}">
+                        <td><h4><a th:href="kategoria + '/' + ${nakyma.kategoriaNimi}" th:text="${nakyma.kategoriaNimi}">nimi</a><br/><small>Some description</small></h4></td>
+                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.lukumaara}">lukumaara</td>
+                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.aika}">aika</td>
+                    </tr>
+                </thead>
+            </table>
         </div>
-        <div class="clearfix"></div>
+<!--        <div class="clearfix"></div>
         <p class="lead">Tervetuloa Matikkafoorumille! Täällä voit keskustella eri matematiikan osa-alueista, kysyä apua tehtäviin tai muuten vain jutella matematiikasta kiinnostuneiden kanssa. Foorumille kirjoittaminen ei vaadi kirjautumista. </p>
         <table class="table forum table-striped">
             <thead>
@@ -38,6 +65,6 @@
             </tr>
             </thead>
         </table>
-    </div>
+    </div>-->
     </body>
 </html>

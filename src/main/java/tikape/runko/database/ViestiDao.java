@@ -71,7 +71,6 @@ public class ViestiDao implements Dao<Viesti, Integer> {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Viesti WHERE Viesti.keskustelu = ?");
         stmt.setObject(1, key);
-
         ResultSet rs = stmt.executeQuery();
         List<Viesti> viestit = new ArrayList<>();
 
@@ -80,7 +79,6 @@ public class ViestiDao implements Dao<Viesti, Integer> {
             String viesti = rs.getString("viesti");
             String aika = rs.getString("aika");
             Integer keskustelu = rs.getInt("keskustelu");
-
             viestit.add(new Viesti(id, viesti, aika, keskustelu));
         }
 
