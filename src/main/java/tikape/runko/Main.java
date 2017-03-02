@@ -61,7 +61,7 @@ public class Main {
             return new ModelAndView(map, "viestit");
         }, new ThymeleafTemplateEngine());
 
-        post("/kategoriat/:kategoriaId/:keskusteluId", (req, res) -> {
+        post("/kategoria/:kategoriaNimi/:keskusteluId", (req, res) -> {
             Integer keskusteluId = Integer.parseInt(req.params(":keskusteluId"));
             String teksti = req.queryParams("teksti");
 
@@ -71,8 +71,10 @@ public class Main {
             return "";
         });
 
-        post("/keskustelut/:id", (req, res) -> {
-            Integer kategoriaId = Integer.parseInt(req.params(":id"));
+        post("/kategoria/:name", (req, res) -> {
+
+            Integer kategoriaId = keskusteluDao.findIdByName(req.params("name"));
+            System.out.println(kategoriaId);
             String otsikko = req.queryParams("otsikko");
             String viesti = req.queryParams("viesti");
             String lahettaja = req.queryParams("lahettaja");

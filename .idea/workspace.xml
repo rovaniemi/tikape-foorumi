@@ -4,15 +4,7 @@
     <list default="true" id="6bae8444-38f1-4fc6-ae30-be4fda2c4c04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/runko/Main.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/runko/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/runko/domain/Alkunakyma.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/runko/domain/Alkunakyma.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/viestit.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/viestit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/keskustelut.html" afterPath="$PROJECT_DIR$/target/classes/templates/keskustelut.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/viestit.html" afterPath="$PROJECT_DIR$/target/classes/templates/viestit.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="68" column="75" lean-forward="false" selection-start-line="68" selection-start-column="75" selection-end-line="68" selection-end-column="75" />
+            <state relative-caret-position="180">
+              <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +45,8 @@
       <file leaf-file-name="keskustelut.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/keskustelut.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+            <state relative-caret-position="499">
+              <caret line="34" column="95" lean-forward="false" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -63,8 +55,8 @@
       <file leaf-file-name="viestit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="108" lean-forward="false" selection-start-line="28" selection-start-column="108" selection-end-line="28" selection-end-column="108" />
+            <state relative-caret-position="390">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,7 +65,7 @@
       <file leaf-file-name="KategoriaDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="540">
               <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
                 <marker date="1488465827000" expanded="true" signature="764:800" ph="SELECT * FRO... Kategoria" />
@@ -110,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeskusteluDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KeskusteluDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            <state relative-caret-position="150">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <marker date="1488465893000" expanded="true" signature="628:665" ph="SELECT * FRO... Keskustelu" />
                 <marker date="1488465893000" expanded="true" signature="1386:1410" ph="SELECT * FRO... Keskustelu" />
@@ -166,11 +158,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/public/theme.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/juu malli.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/viestit.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/tikape/runko/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" />
+        <option value="$PROJECT_DIR$/src/main/java/tikape/runko/Main.java" />
       </list>
     </option>
   </component>
@@ -851,12 +843,12 @@
       <workItem from="1487925589045" duration="554000" />
       <workItem from="1488376979454" duration="406000" />
       <workItem from="1488378689899" duration="5413000" />
-      <workItem from="1488452186674" duration="977000" />
+      <workItem from="1488452186674" duration="1748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41026000" />
+    <option name="totallyTimeSpent" value="41797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="0" />
@@ -1179,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="108" lean-forward="false" selection-start-line="28" selection-start-column="108" selection-end-line="28" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -1209,17 +1193,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/keskustelut.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+        <state relative-caret-position="169">
+          <caret line="30" column="167" lean-forward="false" selection-start-line="30" selection-start-column="167" selection-end-line="30" selection-end-column="167" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <marker date="1488465893000" expanded="true" signature="628:665" ph="SELECT * FRO... Keskustelu" />
+            <marker date="1488465893000" expanded="true" signature="1386:1410" ph="SELECT * FRO... Keskustelu" />
+            <marker date="1488465893000" expanded="true" signature="2136:2191" ph="SELECT * FRO... Keskustelu" />
+            <marker date="1488465893000" expanded="true" signature="2933:2972" ph="SELECT id FR... Kategoria" />
+            <marker date="1488465893000" expanded="true" signature="3543:3600" ph="INSERT INTO Keskustelu... " />
+            <marker date="1488465893000" expanded="true" signature="3940:3970" ph="SELECT MAX(i... Keskustelu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="540">
           <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <marker date="1488465827000" expanded="true" signature="764:800" ph="SELECT * FRO... Kategoria" />
@@ -1229,35 +1236,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/keskustelut.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="30" column="167" lean-forward="false" selection-start-line="30" selection-start-column="167" selection-end-line="30" selection-end-column="167" />
+        <state relative-caret-position="499">
+          <caret line="34" column="95" lean-forward="false" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="68" column="75" lean-forward="false" selection-start-line="68" selection-start-column="75" selection-end-line="68" selection-end-column="75" />
+        <state relative-caret-position="180">
+          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <marker date="1488465893000" expanded="true" signature="628:665" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488465893000" expanded="true" signature="1386:1410" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488465893000" expanded="true" signature="2136:2191" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488465893000" expanded="true" signature="2933:2972" ph="SELECT id FR... Kategoria" />
-            <marker date="1488465893000" expanded="true" signature="3543:3600" ph="INSERT INTO Keskustelu... " />
-            <marker date="1488465893000" expanded="true" signature="3940:3970" ph="SELECT MAX(i... Keskustelu" />
           </folding>
         </state>
       </provider>
