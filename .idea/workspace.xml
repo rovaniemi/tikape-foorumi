@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bae8444-38f1-4fc6-ae30-be4fda2c4c04" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/public/functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Dao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Dao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Kategoria.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Kategoria.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelu.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Viesti.java" afterPath="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Viesti.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/public/theme.css" afterPath="$PROJECT_DIR$/src/main/resources/public/theme.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/viestit.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/viestit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/keskustelut.html" afterPath="$PROJECT_DIR$/target/classes/templates/keskustelut.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/viestit.html" afterPath="$PROJECT_DIR$/target/classes/templates/viestit.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,43 +27,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keskustelut.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="keskustelut.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/keskustelut.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state relative-caret-position="185">
+              <caret line="49" column="109" lean-forward="false" selection-start-line="49" selection-start-column="109" selection-end-line="49" selection-end-column="109" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Viesti.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Viesti.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <file leaf-file-name="theme.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public/theme.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
-              <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+              <caret line="172" column="18" lean-forward="false" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -76,16 +50,25 @@
       <file leaf-file-name="KeskusteluDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+            <state relative-caret-position="488">
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
-                <marker date="1488552860000" expanded="true" signature="820:857" ph="SELECT * FRO... Keskustelu" />
-                <marker date="1488552860000" expanded="true" signature="1578:1602" ph="SELECT * FRO... Keskustelu" />
-                <marker date="1488552860000" expanded="true" signature="2328:2383" ph="SELECT * FRO... Keskustelu" />
-                <marker date="1488552860000" expanded="true" signature="3151:3208" ph="INSERT INTO Keskustelu... " />
-                <marker date="1488552860000" expanded="true" signature="3548:3578" ph="SELECT MAX(i... Keskustelu" />
-                <marker date="1488552860000" expanded="true" signature="3984:4523" ph="SELECT Kesku... Keskustelu" />
+                <marker date="1488562547000" expanded="true" signature="820:857" ph="SELECT * FRO... Keskustelu" />
+                <marker date="1488562547000" expanded="true" signature="1578:1602" ph="SELECT * FRO... Keskustelu" />
+                <marker date="1488562547000" expanded="true" signature="2446:2503" ph="INSERT INTO Keskustelu... " />
+                <marker date="1488562547000" expanded="true" signature="2843:2873" ph="SELECT MAX(i... Keskustelu" />
+                <marker date="1488562547000" expanded="true" signature="3279:3818" ph="SELECT Kesku... Keskustelu" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,41 +76,35 @@
       <file leaf-file-name="ViestiDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+            <state relative-caret-position="260">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1488552695000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
-                <marker date="1488552695000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
-                <marker date="1488552695000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
-                <marker date="1488552695000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
+                <marker date="1488562547000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
+                <marker date="1488562547000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
+                <marker date="1488562547000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
+                <marker date="1488562547000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Database.java">
+      <file leaf-file-name="Alkunakyma.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Alkunakyma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="-100">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KategoriaDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1488552104000" expanded="true" signature="756:792" ph="SELECT * FRO... Kategoria" />
-                <marker date="1488552104000" expanded="true" signature="1445:1468" ph="SELECT * FRO... Kategoria" />
-                <marker date="1488552104000" expanded="true" signature="2105:2144" ph="SELECT id FR... Kategoria" />
-                <marker date="1488552104000" expanded="true" signature="2799:3269" ph="SELECT Kateg... Kategoria" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,19 +112,34 @@
       <file leaf-file-name="viestit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="40" selection-end-column="17" />
+            <state relative-caret-position="170">
+              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="109" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Keskustelunakyma.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelunakyma.java">
+      <file leaf-file-name="Maara.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Maara.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="260">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#475#476#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public/bootstrap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/public/css/theme.css" />
         <option value="$PROJECT_DIR$/src/main/resources/public/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/kategoriat.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/public/theme.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/juu malli.html" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/runko/database/KategoriaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/runko/database/KeskusteluDao.java" />
@@ -208,13 +199,16 @@
         <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Viesti.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelu.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Kategoria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Dao.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/public/functions.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/viestit.html" />
-        <option value="$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/keskustelut.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/public/theme.css" />
       </list>
     </option>
   </component>
@@ -329,6 +323,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -931,12 +929,12 @@
       <workItem from="1488452186674" duration="10793000" />
       <workItem from="1488541331222" duration="1859000" />
       <workItem from="1488544947148" duration="86000" />
-      <workItem from="1488547911796" duration="7459000" />
+      <workItem from="1488547911796" duration="10959000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60246000" />
+    <option name="totallyTimeSpent" value="63746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="6" />
@@ -995,24 +993,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1055,10 +1035,10 @@
           <caret line="76" column="4" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1488552695000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
+            <marker date="1488562547000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
           </folding>
         </state>
       </provider>
@@ -1069,10 +1049,10 @@
           <caret line="39" column="15" lean-forward="false" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1488552104000" expanded="true" signature="756:792" ph="SELECT * FRO... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="1445:1468" ph="SELECT * FRO... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="2105:2144" ph="SELECT id FR... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="2799:3269" ph="SELECT Kateg... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="756:792" ph="SELECT * FRO... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="1445:1468" ph="SELECT * FRO... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="2105:2144" ph="SELECT id FR... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="2695:3165" ph="SELECT Kateg... Kategoria" />
           </folding>
         </state>
       </provider>
@@ -1143,21 +1123,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/juu malli.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="170" column="1" lean-forward="false" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1182,29 +1147,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Maara.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#475#476#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Keskustelu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Alkunakyma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1217,14 +1163,6 @@
             <element signature="e#442#443#0" expanded="true" />
             <element signature="e#474#475#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,62 +1182,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1488552104000" expanded="true" signature="756:792" ph="SELECT * FRO... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="1445:1468" ph="SELECT * FRO... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="2105:2144" ph="SELECT id FR... Kategoria" />
-            <marker date="1488552104000" expanded="true" signature="2799:3269" ph="SELECT Kateg... Kategoria" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Viesti.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1488552695000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
-            <marker date="1488552695000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
-          <folding>
-            <marker date="1488552860000" expanded="true" signature="820:857" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488552860000" expanded="true" signature="1578:1602" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488552860000" expanded="true" signature="2328:2383" ph="SELECT * FRO... Keskustelu" />
-            <marker date="1488552860000" expanded="true" signature="3151:3208" ph="INSERT INTO Keskustelu... " />
-            <marker date="1488552860000" expanded="true" signature="3548:3578" ph="SELECT MAX(i... Keskustelu" />
-            <marker date="1488552860000" expanded="true" signature="3984:4523" ph="SELECT Kesku... Keskustelu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1313,10 +1200,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KategoriaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1488562549000" expanded="true" signature="756:792" ph="SELECT * FRO... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="1445:1468" ph="SELECT * FRO... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="2105:2144" ph="SELECT id FR... Kategoria" />
+            <marker date="1488562549000" expanded="true" signature="2695:3165" ph="SELECT Kateg... Kategoria" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Alkunakyma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/KeskusteluDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <marker date="1488562547000" expanded="true" signature="820:857" ph="SELECT * FRO... Keskustelu" />
+            <marker date="1488562547000" expanded="true" signature="1578:1602" ph="SELECT * FRO... Keskustelu" />
+            <marker date="1488562547000" expanded="true" signature="2446:2503" ph="INSERT INTO Keskustelu... " />
+            <marker date="1488562547000" expanded="true" signature="2843:2873" ph="SELECT MAX(i... Keskustelu" />
+            <marker date="1488562547000" expanded="true" signature="3279:3818" ph="SELECT Kesku... Keskustelu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/domain/Maara.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tikape/matikkafoorumi/database/ViestiDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1488562547000" expanded="true" signature="626:659" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="1368:1388" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="2092:2140" ph="SELECT * FRO... Viesti" />
+            <marker date="1488562547000" expanded="true" signature="3160:3213" ph="INSERT INTO Viesti... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/viestit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/keskustelut.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="49" column="109" lean-forward="false" selection-start-line="49" selection-start-column="109" selection-end-line="49" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <caret line="172" column="18" lean-forward="false" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/theme.css"/>
         <link rel="stylesheet" href="/bootstrap.css"/>
         <link rel="stylesheet" href="/bootstrap-theme.css"/>
-        <script src="/bootstrap.min.js"></script>
+        <script src="/bootstrap.js"></script>
     </head>
 
     <body>
@@ -43,14 +43,15 @@
                 </li>
             </ol>
 
-            <form method="POST">
+            <form method="POST" name="formi" onsubmit="return validoiKeskustelu()">
                 <div class="form-group">
-                    <textarea class="form-control" name="otsikko" rows="1" placeholder="Lisää aihe"></textarea>
+                    <input type="text" class="form-control" name="otsikko" placeholder="Lisää aihe"></input>
                     <textarea class="form-control" name="viesti" rows="6" placeholder="Lisää viesti"></textarea>
-                    <textarea class="form-control" name="lahettaja" rows="1" placeholder="Lähettäjä"></textarea>
+                    <input type="text" class="form-control" name="lahettaja" placeholder="Lähettäjä"></input>
                 </div>
                 <button type="submit" class="btn btn-primary">Lisää aihe</button>
             </form>
         </div>
+        <script src="/functions.js"></script>
     </body>
 </html>

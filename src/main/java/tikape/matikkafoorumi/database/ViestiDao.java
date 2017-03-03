@@ -109,9 +109,5 @@ public class ViestiDao implements Dao<Viesti, Integer> {
         connection.close();
     }
 
-    @Override
-    public void delete(Integer key) throws SQLException {
-        //ei toteutettu
-    }
 
 }

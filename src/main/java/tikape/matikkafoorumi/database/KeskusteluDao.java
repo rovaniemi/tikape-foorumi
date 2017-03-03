@@ -71,30 +71,10 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         return keskustelut;
     }
 
-    public List<Keskustelu> findAllByKategoria(int key) throws SQLException {
-        Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Keskustelu WHERE Keskustelu.kategoria = ?");
-        stmt.setObject(1, key);
-
-        ResultSet rs = stmt.executeQuery();
-        List<Keskustelu> keskustelut = new ArrayList<>();
-
-        while (rs.next()) {
-            Integer id = rs.getInt("id");
-            String otsikko = rs.getString("otsikko");
-            String aika = rs.getString("aika");
-            Integer kategoria = rs.getInt("kategoria");
-            keskustelut.add(new Keskustelu(id, otsikko, aika, kategoria));
-        }
-
-        rs.close();
-        stmt.close();
-        connection.close();
-
-        return keskustelut;
-    }
-
     public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
+        if(teksti.isEmpty() || teksti.contains(">") || teksti.contains(">")){
+            return;
+        }
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO Keskustelu (otsikko, kategoria) VALUES (?, ?)");
         stmt.setObject(1, teksti);
@@ -161,8 +141,4 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         return nakyma;
     }
 
-    @Override
-    public void delete(Integer key) throws SQLException {
-
-    }
 }

@@ -87,11 +87,6 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
         return kokonaisluku.get(0);
     }
 
-    @Override
-    public void delete(Integer key) throws SQLException {
-        // ei toteutettu
-    }
-
     public List<Alkunakyma> luoAlkunakyma() throws SQLException {
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, "

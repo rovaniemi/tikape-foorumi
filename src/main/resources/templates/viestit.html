@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/theme.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/bootstrap-theme.css"/>
-        <script src="/bootstrap.min.js"></script>
+        <script src="/bootstrap.js"></script>
     </head>
 
     <body>
@@ -24,7 +24,7 @@
             <h4 th:text="${keskustelu.otsikko}">otsikko</h4>
             <ul class="timeline">
                 <li th:each="viesti,iterStat : ${viestit}" th:class="${iterStat.odd}? 'timeline-inverted' ">
-                    <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                    <div class="timeline-badge"><i class="glyphicon glyphicon-comment"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-body">
                             <p th:text="${viesti.viesti}">viestin teksti</p>
@@ -40,13 +40,14 @@
                 </li>
             </ol>
 
-            <form method="POST">
+            <form method="POST" name="formi" onsubmit="return validoiViesti()">
                 <div class="form-group">
                     <textarea class="form-control" name="teksti" rows="6" placeholder="Lisää viesti"></textarea>
-                    <textarea class="form-control" name="lahettaja" rows="1" placeholder="Lähettäjä"></textarea>
+                    <input type="text" class="form-control" name="lahettaja" placeholder="Lähettäjä"></input>
                 </div>
                 <button type="submit" class="btn btn-primary">Lähetä viesti</button>
             </form>
         </div>
+        <script src="/functions.js"></script>
     </body>
 </html>
