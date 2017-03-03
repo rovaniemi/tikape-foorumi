@@ -6,8 +6,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import tikape.runko.domain.Keskustelunakyma;
 
 public class KeskusteluDao implements Dao<Keskustelu, Integer> {
 
@@ -108,6 +113,52 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
         stmt.close();
         connection.close();
         return viimeisin;
+    }
+
+    public List<Keskustelunakyma> luoKeskustelunakyma(Integer key) throws SQLException {
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT Keskustelu.id AS keskusteluId, Keskustelu.otsikko AS otsikko, Kategoria.id AS kategoriaId, "
+                + "COUNT(Viesti.viesti) AS viestit_yhteensa, "
+                + "MAX(Viesti.aika) AS viimeisin_viesti "
+                + "FROM Keskustelu, Viesti, Kategoria "
+                + "WHERE Keskustelu.id = Viesti.keskustelu "
+                + "AND Keskustelu.kategoria = Kategoria.id "
+                + "AND Kategoria.id = ? "
+                + "GROUP BY Keskustelu.otsikko "
+                + "ORDER BY viimeisin_viesti DESC");
+        stmt.setObject(1, key);
+        ResultSet rs = stmt.executeQuery();
+        
+        List<Keskustelunakyma> nakyma = new ArrayList<>();
+        
+        while (rs.next()) {
+            int id = rs.getInt("keskusteluId");
+            String otsikko = rs.getString("otsikko");
+            int viestit = rs.getInt("viestit_yhteensa");
+            String aika = rs.getString("viimeisin_viesti");
+            int kategoriaId = rs.getInt("kategoriaId");
+
+            DateFormat readFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM");
+            Date date = null;
+            try {
+                date = readFormat.parse(aika);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String formattedDate = "";
+            if (date != null) {
+                formattedDate = writeFormat.format(date);
+            }
+            aika = formattedDate;
+
+            nakyma.add(new Keskustelunakyma(id, otsikko, viestit, aika, kategoriaId));
+        }
+
+        rs.close();
+        stmt.close();
+        connection.close();
+        return nakyma;
     }
 
     @Override

@@ -35,8 +35,7 @@ public class Main {
         get("/kategoria/:name", (req, res) -> {
             HashMap map = new HashMap<>();
             int kategoriaId = kategoriaDao.findIdByName(req.params("name"));
-            List<Keskustelu> keskustelut = keskusteluDao.findAllByKategoria(kategoriaId);
-            map.put("keskustelut", keskustelut);
+            map.put("nakyma", keskusteluDao.luoKeskustelunakyma(kategoriaId));
             map.put("kategoria", kategoriaDao.findOne(kategoriaId));
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());

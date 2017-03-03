@@ -28,10 +28,10 @@
                         <th class="cell-stat text-center hidden-s hidden-m">Viestien määrä</th>
                         <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
                     </tr>
-                    <tr th:each="keskustelu: ${keskustelut}">
-                        <td><h4><a th:href="${'/kategoria/' +  kategoria.nimi + '/' + keskustelu.id + '-' + 1}" th:text="${keskustelu.otsikko}">otsikko</a></h4></td>
-                        <td class="text-center hidden-s hidden-sm" >aika</td>
-                        <td class="text-center hidden-s hidden-sm" >aika</td>
+                    <tr th:each="nakyma: ${nakyma}">
+                        <td><h4><a th:href="${'/kategoria/' +  kategoria.nimi + '/' + nakyma.keskusteluId + '-' + 1}" th:text="${nakyma.keskusteluOtsikko}">otsikko</a></h4></td>
+                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.viestienMaara}" >aika</td>
+                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.viimeisinViesti}">aika</td>
                     </tr>
                 </thead>
             </table>

@@ -95,7 +95,9 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
 
     public List<Alkunakyma> luoAlkunakyma() throws SQLException {
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, Kategoria.kuvaus AS Kuvaus, COUNT(Viesti.viesti) AS Viesteja_yhteensa, MAX(Viesti.aika) AS Viimeisin_viesti\n"
+        PreparedStatement stmt = connection.prepareStatement("SELECT Kategoria.id, Kategoria.nimi AS Kategoria, "
+                + "Kategoria.kuvaus AS Kuvaus, COUNT(Viesti.viesti) AS Viesteja_yhteensa, "
+                + "MAX(Viesti.aika) AS Viimeisin_viesti\n"
                 + "FROM Kategoria, Viesti, Keskustelu\n"
                 + "WHERE Keskustelu.id = Viesti.keskustelu \n"
                 + "AND Kategoria.id = Keskustelu.kategoria\n"
@@ -135,7 +137,6 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
         stmt.close();
         connection.close();
         return nakyma;
-
     }
 
 }
