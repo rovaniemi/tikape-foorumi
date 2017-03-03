@@ -1,13 +1,5 @@
 package tikape.matikkafoorumi.domain;
 
-/*
-Tämä on meidän foorumiin liittyvän Keskustelu-käsitteen olio. Oliomuuttujina on
-Keskustelu-taulun sarakkeet. Kun SQL-kyselyillä haetaan Keskustelu-taulusta 
-tietoa, niin sarakkeiden arvot tallennetaan Keskustelu-olion oliomuuttujien 
-arvoiksi. Esim. siis rivin X arvo otsikko-sarakkeessa tallennetaan Keskustelu-
-olion otsikko-muuttujan arvoksi. 
-*/
-
 public class Keskustelu {
     private Integer id;
     private String otsikko;

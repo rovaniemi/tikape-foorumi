@@ -15,7 +15,7 @@
             <div class="page-header page-heading">
             <ol class="breadcrumb pull-right where-am-i">
                 <li><a href="/">Etusivu</a></li>
-                <li><a th:href="${'/kategoria/' + kategoria.nimi}" th:text="${kategoria.nimi}"></a></li>
+                <li><a th:href="${'/kategoria/' + kategoria.nimi + '-1'}" th:text="${kategoria.nimi}"></a></li>
                 <li class="active">Keskustelu</li>
             </ol>
                 <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
@@ -40,15 +40,12 @@
                 </li>
             </ol>
 
-            <form method="POST" onsubmit="setTimeout(function () {
-                        window.location.reload();
-                    }, 10)">
+            <form method="POST">
                 <div class="form-group">
                     <textarea class="form-control" name="teksti" rows="6" placeholder="Lisää viesti"></textarea>
                     <textarea class="form-control" name="lahettaja" rows="1" placeholder="Lähettäjä"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Lähetä viesti</button>
-
             </form>
         </div>
     </body>

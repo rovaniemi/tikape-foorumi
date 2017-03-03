@@ -36,9 +36,14 @@
                 </thead>
             </table>
 
-            <form method="POST" onsubmit="setTimeout(function () {
-                        window.location.reload();
-                    }, 10)">
+            <ol class="breadcrumb pull-left where-am-i">
+                <li th:each="maara: ${maara}" >
+                    <a th:if="${maara.getOnkoSivu()} == false" th:href="${'/kategoria/' + kategoria.nimi + '-' + maara.id}" th:text="${maara.id}"></a>
+                    <a th:if="${maara.getOnkoSivu()} == true" th:text="${maara.id}" style="color:#808080; text-decoration: none;" ></a>
+                </li>
+            </ol>
+
+            <form method="POST">
                 <div class="form-group">
                     <textarea class="form-control" name="otsikko" rows="1" placeholder="Lisää aihe"></textarea>
                     <textarea class="form-control" name="viesti" rows="6" placeholder="Lisää viesti"></textarea>

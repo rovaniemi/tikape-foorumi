@@ -9,6 +9,7 @@ import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import tikape.matikkafoorumi.database.KeskusteluDao;
 import tikape.matikkafoorumi.database.KategoriaDao;
+import tikape.matikkafoorumi.domain.Keskustelunakyma;
 import tikape.matikkafoorumi.domain.Viesti;
 import tikape.matikkafoorumi.database.Database;
 import tikape.matikkafoorumi.database.ViestiDao;
@@ -35,11 +36,15 @@ public class Main {
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
 
-        get("/kategoria/:name", (req, res) -> {
+        get("/kategoria/:nimi", (req, res) -> {
+            String[] parsittu = req.params("nimi").split("-");
             HashMap map = new HashMap<>();
-            int kategoriaId = kategoriaDao.findIdByName(req.params("name"));
-            map.put("nakyma", keskusteluDao.luoKeskustelunakyma(kategoriaId));
+            int kategoriaId = kategoriaDao.findIdByName(parsittu[0]);
+            List<Keskustelunakyma> kaikkiNakymat = keskusteluDao.luoKeskustelunakyma(kategoriaId);
+            List<Keskustelunakyma> kymmenenNakymaa = kymmenenNakymaa(kaikkiNakymat,parsittu[1]);
+            map.put("nakyma", kymmenenNakymaa);
             map.put("kategoria", kategoriaDao.findOne(kategoriaId));
+            map.put("maara", keskustelujenMaara(kaikkiNakymat, Integer.parseInt(parsittu[1])));
             return new ModelAndView(map, "keskustelut");
         }, new ThymeleafTemplateEngine());
 
@@ -61,25 +66,24 @@ public class Main {
             Integer keskusteluId = Integer.parseInt(koko[0]);
             String teksti = req.queryParams("teksti");
             String lahettaja = req.queryParams("lahettaja");
-            viestiDao.addViesti(teksti + " t. " + lahettaja, keskusteluId);
-            res.redirect("redirect:home");
+            viestiDao.addViesti(teksti, lahettaja, keskusteluId);
+            List<Viesti> kaikkiViestit = viestiDao.findAllByKeskustelu(Integer.parseInt(koko[0]));
+            res.redirect("/kategoria/" + req.params("kategoriaNimi") + "/" + koko[0] + "-" + (((kaikkiViestit.size()-1)/10) + 1));
             return "";
         });
 
-        post("/kategoria/:name", (req, res) -> {
-
-            Integer kategoriaId = kategoriaDao.findIdByName(req.params("name"));
-            System.out.println(kategoriaId);
+        post("/kategoria/:nimi", (req, res) -> {
+            String[] parsittu = req.params("nimi").split("-");
+            Integer kategoriaId = kategoriaDao.findIdByName(parsittu[0]);
             String otsikko = req.queryParams("otsikko");
             String viesti = req.queryParams("viesti");
             String lahettaja = req.queryParams("lahettaja");
             keskusteluDao.addKeskustelu(otsikko, kategoriaId);
-            viestiDao.addViesti(viesti + " t. " + lahettaja, keskusteluDao.palautaViimeisin());
-            
-            res.redirect("redirect:home");
+            int id = keskusteluDao.palautaViimeisin();
+            viestiDao.addViesti(viesti, lahettaja, id);
+            res.redirect("/kategoria/" + parsittu[0] + "/" + id +"-1");
             return "";
         });
-
     }
 
     public static List<Viesti> kymmenenViestia(List<Viesti> kaikkiViestit, String numero){
@@ -95,9 +99,34 @@ public class Main {
         return kymmenenViestia;
     }
 
+    public static List<Keskustelunakyma> kymmenenNakymaa(List<Keskustelunakyma> kaikkiNakymat, String numero){
+        int monesko = Integer.parseInt(numero);
+        List<Keskustelunakyma> kymmenenNakymaa = new ArrayList<>();
+        for (int i = (monesko * 10) - 10; i < monesko * 10; i++) {
+            if(i >= kaikkiNakymat.size()){
+                break;
+            } else {
+                kymmenenNakymaa.add(kaikkiNakymat.get(i));
+            }
+        }
+        return kymmenenNakymaa;
+    }
+
     public static List<Maara> viestienMaara(List<Viesti> kaikkiviestit, int tamanhetkinen){
         List<Maara> lista = new ArrayList<>();
         for (int i = 0; i < kaikkiviestit.size(); i = i + 10) {
+            if((i/10 + 1) == tamanhetkinen){
+                lista.add(new Maara(i/10 + 1,true));
+            } else {
+                lista.add(new Maara(i/10 + 1,false));
+            }
+        }
+        return lista;
+    }
+
+    public static List<Maara> keskustelujenMaara(List<Keskustelunakyma> kaikkiKeskustelut, int tamanhetkinen){
+        List<Maara> lista = new ArrayList<>();
+        for (int i = 0; i < kaikkiKeskustelut.size(); i = i + 10) {
             if((i/10 + 1) == tamanhetkinen){
                 lista.add(new Maara(i/10 + 1,true));
             } else {

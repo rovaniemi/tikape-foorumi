@@ -139,7 +139,7 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
             int kategoriaId = rs.getInt("kategoriaId");
 
             DateFormat readFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM");
+            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM.yyyy");
             Date date = null;
             try {
                 date = readFormat.parse(aika);

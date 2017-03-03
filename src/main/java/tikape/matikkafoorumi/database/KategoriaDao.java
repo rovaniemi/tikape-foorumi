@@ -113,7 +113,7 @@ public class KategoriaDao implements Dao<Kategoria, Integer> {
             String aika = rs.getString("Viimeisin_viesti");
             String kuvaus = rs.getString("Kuvaus");
             DateFormat readFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM");
+            DateFormat writeFormat = new SimpleDateFormat("HH:mm dd.MM.yyyy");
             Date date = null;
             try {
                 date = readFormat.parse(aika);
