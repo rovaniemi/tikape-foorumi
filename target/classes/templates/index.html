@@ -29,13 +29,13 @@
                         <th>
                             <h4>Kategoria</h4>
                         </th>
-                        <th class="cell-stat text-center hidden-s hidden-m">Viestien määrä</th>
-                        <th class="cell-stat text-center hidden-s hidden-m">Viimeisin viesti</th>
+                        <th class="cell-stat text-center">Viestien määrä</th>
+                        <th class="cell-stat text-center">Viimeisin viesti</th>
                     </tr>
                     <tr th:each="nakyma : ${nakyma}">
                         <td><h4><a th:href="kategoria + '/' + ${nakyma.kategoriaNimi + '-' + '1'}" th:text="${nakyma.kategoriaNimi}">nimi</a><br/><small th:text="${nakyma.kategoriaKuvaus}">kuvaus</small></h4></td>
-                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.lukumaara}">lukumaara</td>
-                        <td class="text-center hidden-s hidden-sm" th:text="${nakyma.aika}">aika</td>
+                        <td class="text-center" th:text="${nakyma.lukumaara}">lukumaara</td>
+                        <td class="text-center" th:text="${nakyma.aika}">aika</td>
                     </tr>
                 </thead>
             </table>
