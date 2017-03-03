@@ -1,4 +1,4 @@
-package tikape;
+package tikape.matikkafoorumi;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,12 +7,12 @@ import spark.ModelAndView;
 import static spark.Spark.*;
 import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
-import tikape.database.KategoriaDao;
-import tikape.domain.Viesti;
-import tikape.database.Database;
-import tikape.database.KeskusteluDao;
-import tikape.database.ViestiDao;
-import tikape.domain.Maara;
+import tikape.matikkafoorumi.database.KeskusteluDao;
+import tikape.matikkafoorumi.database.KategoriaDao;
+import tikape.matikkafoorumi.domain.Viesti;
+import tikape.matikkafoorumi.database.Database;
+import tikape.matikkafoorumi.database.ViestiDao;
+import tikape.matikkafoorumi.domain.Maara;
 
 public class Main {
 

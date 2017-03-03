@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* tikape.Main
+web:    java -cp target/classes:target/dependency/* tikape.matikkafoorumi.Main

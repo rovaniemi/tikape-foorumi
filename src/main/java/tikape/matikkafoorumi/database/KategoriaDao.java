@@ -1,6 +1,6 @@
-package tikape.database;
+package tikape.matikkafoorumi.database;
 
-import tikape.domain.Kategoria;
+import tikape.matikkafoorumi.domain.Kategoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import tikape.domain.Alkunakyma;
+import tikape.matikkafoorumi.domain.Alkunakyma;
 
 public class KategoriaDao implements Dao<Kategoria, Integer> {
 

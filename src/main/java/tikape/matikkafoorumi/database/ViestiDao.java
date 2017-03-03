@@ -1,4 +1,4 @@
-package tikape.database;
+package tikape.matikkafoorumi.database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tikape.domain.Viesti;
+import tikape.matikkafoorumi.domain.Viesti;
 
 public class ViestiDao implements Dao<Viesti, Integer> {
 

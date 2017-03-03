@@ -1,4 +1,4 @@
-package tikape.database;
+package tikape.matikkafoorumi.database;
 
 import java.sql.*;
 import java.util.*;

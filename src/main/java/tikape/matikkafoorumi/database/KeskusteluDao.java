@@ -1,7 +1,7 @@
-package tikape.database;
+package tikape.matikkafoorumi.database;
 
-import tikape.domain.Keskustelu;
-import tikape.domain.Keskustelunakyma;
+import tikape.matikkafoorumi.domain.Keskustelu;
+import tikape.matikkafoorumi.domain.Keskustelunakyma;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

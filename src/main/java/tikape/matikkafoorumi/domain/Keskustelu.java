@@ -1,4 +1,4 @@
-package tikape.domain;
+package tikape.matikkafoorumi.domain;
 
 /*
 Tämä on meidän foorumiin liittyvän Keskustelu-käsitteen olio. Oliomuuttujina on

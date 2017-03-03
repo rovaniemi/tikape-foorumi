@@ -1,4 +1,4 @@
-package tikape.domain;
+package tikape.matikkafoorumi.domain;
 
 public class Alkunakyma {
 
