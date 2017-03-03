@@ -1,4 +1,4 @@
-package tikape.runko.domain;
+package tikape.domain;
 
 public class Keskustelunakyma {
     private int keskusteluId;

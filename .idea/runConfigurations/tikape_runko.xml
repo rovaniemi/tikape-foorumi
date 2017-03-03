@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="tikape-runko" type="Application" factoryName="Application">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    <option name="MAIN_CLASS_NAME" value="tikape.runko.Main" />
+    <option name="MAIN_CLASS_NAME" value="tikape.Main" />
     <option name="VM_PARAMETERS" />
     <option name="PROGRAM_PARAMETERS" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />

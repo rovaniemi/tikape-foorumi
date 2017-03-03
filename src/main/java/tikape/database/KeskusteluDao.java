@@ -1,6 +1,7 @@
-package tikape.runko.database;
+package tikape.database;
 
-import tikape.runko.domain.Keskustelu;
+import tikape.domain.Keskustelu;
+import tikape.domain.Keskustelunakyma;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import tikape.runko.domain.Keskustelunakyma;
 
 public class KeskusteluDao implements Dao<Keskustelu, Integer> {
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tikape-runko.iml" filepath="$PROJECT_DIR$/tikape-runko.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tikape.iml" filepath="$PROJECT_DIR$/tikape.iml" />
     </modules>
   </component>
 </project>

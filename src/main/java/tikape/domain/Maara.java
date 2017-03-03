@@ -1,4 +1,4 @@
-package tikape.runko.domain;
+package tikape.domain;
 
 public class Maara {
     private int id;

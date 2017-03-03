@@ -1,4 +1,4 @@
-package tikape.runko;
+package tikape;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,13 +7,12 @@ import spark.ModelAndView;
 import static spark.Spark.*;
 import spark.Spark;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
-import tikape.runko.database.Database;
-import tikape.runko.database.KategoriaDao;
-import tikape.runko.database.KeskusteluDao;
-import tikape.runko.database.ViestiDao;
-import tikape.runko.domain.Keskustelu;
-import tikape.runko.domain.Viesti;
-import tikape.runko.domain.Maara;
+import tikape.database.KategoriaDao;
+import tikape.domain.Viesti;
+import tikape.database.Database;
+import tikape.database.KeskusteluDao;
+import tikape.database.ViestiDao;
+import tikape.domain.Maara;
 
 public class Main {
 
@@ -21,6 +20,10 @@ public class Main {
         Spark.staticFileLocation("/public");
         Database database = new Database("jdbc:sqlite:foorumi.db");
         database.init();
+
+        if (System.getenv("PORT") != null) {
+            port(Integer.valueOf(System.getenv("PORT")));
+        }
 
         KategoriaDao kategoriaDao = new KategoriaDao(database);
         KeskusteluDao keskusteluDao = new KeskusteluDao(database);

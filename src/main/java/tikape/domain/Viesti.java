@@ -1,4 +1,4 @@
-package tikape.runko.domain;
+package tikape.domain;
 
 /*
 Tämä on meidän foorumiin liittyvän Viesti-käsitteen olio. Eli kun SQL-kyselyillä

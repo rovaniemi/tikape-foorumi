@@ -1,4 +1,4 @@
-package tikape.runko.domain;
+package tikape.domain;
 
 /*
 Tämä on Kategoria-käsitteen olioversio. Ks. Viesti- ja Keskustelu-luokat. Toimii
