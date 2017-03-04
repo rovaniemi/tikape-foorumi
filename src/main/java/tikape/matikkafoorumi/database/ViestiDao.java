@@ -90,7 +90,7 @@ public class ViestiDao implements Dao<Viesti, Integer> {
     }
 
     public void addViesti(String teksti, String henkilo, Integer keskusteluId) throws SQLException {
-        if(teksti.equals("") || teksti.contains(">") || teksti.contains("<")){
+        if(teksti.equals("") || teksti.contains(">") || teksti.contains("<") || teksti.trim().length() == 0){
             return;
         }
 
@@ -99,7 +99,6 @@ public class ViestiDao implements Dao<Viesti, Integer> {
         }
 
         teksti += " t. " + henkilo;
-
         Connection connection = database.getConnection();
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO Viesti (viesti, keskustelu) VALUES (?, ?)");
         stmt.setObject(1, teksti);

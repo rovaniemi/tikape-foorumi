@@ -41,6 +41,9 @@ public class Main {
             HashMap map = new HashMap<>();
             int kategoriaId = kategoriaDao.findIdByName(parsittu[0]);
             List<Keskustelunakyma> kaikkiNakymat = keskusteluDao.luoKeskustelunakyma(kategoriaId);
+            if(Integer.parseInt(parsittu[1]) - 1 > kaikkiNakymat.size() / 10){
+                kaikkiNakymat = null;
+            }
             List<Keskustelunakyma> kymmenenNakymaa = kymmenenNakymaa(kaikkiNakymat,parsittu[1]);
             map.put("nakyma", kymmenenNakymaa);
             map.put("kategoria", kategoriaDao.findOne(kategoriaId));
@@ -53,6 +56,9 @@ public class Main {
             String koko[] = req.params("keskusteluId").split("-");
             List<Viesti> kaikkiViestit = viestiDao.findAllByKeskustelu(Integer.parseInt(koko[0]));
             List<Viesti> kymmenenViestia = kymmenenViestia(kaikkiViestit,koko[1]);
+            if(Integer.parseInt(koko[1]) - 1 > kaikkiViestit.size() / 10){
+                kaikkiViestit = null;
+            }
             map.put("viestit", kymmenenViestia);
             map.put("keskustelu", keskusteluDao.findOne(Integer.parseInt(koko[0])));
             int kategoriaId = kategoriaDao.findIdByName(req.params("kategoriaNimi"));

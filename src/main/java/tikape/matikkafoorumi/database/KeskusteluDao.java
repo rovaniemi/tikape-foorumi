@@ -72,7 +72,7 @@ public class KeskusteluDao implements Dao<Keskustelu, Integer> {
     }
 
     public void addKeskustelu(String teksti, Integer kategoriaId) throws SQLException {
-        if(teksti.isEmpty() || teksti.contains(">") || teksti.contains(">")){
+        if(teksti.isEmpty() || teksti.contains(">") || teksti.contains(">") || teksti.trim().length() == 0){
             return;
         }
         Connection connection = database.getConnection();
