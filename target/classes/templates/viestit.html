@@ -16,7 +16,7 @@
             <ol class="breadcrumb pull-right where-am-i">
                 <li><a href="/">Etusivu</a></li>
                 <li><a th:href="${'/kategoria/' + kategoria.nimi + '-1'}" th:text="${kategoria.nimi}"></a></li>
-                <li class="active">Keskustelu</li>
+                <li class="active" th:text="${keskustelu.otsikko}">Keskustelu</li>
             </ol>
                 <h1 th:text="${kategoria.nimi}">kategorian nimi</h1>
             </div>
