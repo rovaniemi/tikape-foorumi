@@ -1,6 +1,7 @@
-# Tikape
-Tietokantojen perusteet -kurssilla tehtävä foorumi sovellus.
+# Tikape-foorumi
 
-Kaikki dokumentaatio on [wikissä](https://github.com/rovaniemi/tikape-foorumi/wiki)
+Tietokantojen perusteet -kurssilla tehty matikkafoorumi.
 
-[Heroku](https://matikkafoorumi.herokuapp.com/)
+Dokumentaatio on [wikissä](https://github.com/rovaniemi/tikape-foorumi/wiki)
+
+Sovellusta pääsee testaamaan [Herokussa](https://matikkafoorumi.herokuapp.com/)
